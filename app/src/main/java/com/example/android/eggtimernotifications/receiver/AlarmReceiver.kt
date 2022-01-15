@@ -32,6 +32,10 @@ class AlarmReceiver: BroadcastReceiver() {
         Toast.makeText(context, context.getText(R.string.eggs_ready), Toast.LENGTH_SHORT).show()
 
         // TODO: Step 1.9 add call to sendNotification
+        (ContextCompat.getSystemService(context, NotificationManager::class.java) as NotificationManager).apply {
+            sendNotification(context.getString(R.string.eggs_ready),
+            context)
+        }
 
     }
 
